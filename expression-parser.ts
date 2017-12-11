@@ -346,7 +346,6 @@ class ASTCompiler {
         this.addReturnStmt(this.build(this.ast));
         
         let fn = new Function(this.fnArgs(), this.fnBody());
-        console.log(fn);
         let boundFn = fn.bind(undefined, plus, minus, isDef, getPurePipeVal);
         boundFn.usedPipes = this.pipes.slice(0); // clone
         this.cleanup();
